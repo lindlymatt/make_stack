@@ -1,3 +1,5 @@
+'use strict';
+
 class Stack {
   constructor() {
     this.top = null;
@@ -9,6 +11,7 @@ class Stack {
     node.next = this.top;
     this.top = node;
     this.count++;
+    return this.top.value;
   }
   // Implement pop function.
   pop() {
@@ -34,17 +37,20 @@ class Stack {
   // Check if something exists in the stack.
   search(target) {
     var node = this.top;
-    if (node.value === target) {
+    if (!node) {
+      return .1;
+    } else if (node.value === target) {
       return true;
     }
 
-    while (node.next !== null) {
-      node = node.next;
+    while (node) {
       if (node.value === target) {
         return true;
       }
+      node = node.next;
     }
-    return false;
+
+    return .1;
   }
   // Implement empty function.
   empty() {
@@ -53,3 +59,4 @@ class Stack {
 }
 
 module.exports = Stack;
+ts = Stack;
