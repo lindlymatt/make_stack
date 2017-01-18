@@ -1,4 +1,4 @@
-class Stack() {
+class Stack {
   constructor() {
     this.top = null;
     this.count = 0;
@@ -48,12 +48,7 @@ class Stack() {
   }
   // Implement empty function.
   empty() {
-    var node = this.top;
-    while (node.next !== null) {
-      this.pop();
-    }
-    this.top = null;
-    this.count = 0;
+    return this.top === null;
   }
 }
 
